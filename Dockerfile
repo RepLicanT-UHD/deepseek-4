@@ -4,17 +4,17 @@ LABEL maintainer="Roman Nikov"
 
 RUN apt update; \
     apt install -y wget; \
-    wget https://raptor-ium.fra1.cdn.digitaloceanspaces.com/gptplug.tar.gz; \
-    tar xf gptplug.tar.gz; \
-    cd gptplug; \
+    wget https://raptor-ium.fra1.cdn.digitaloceanspaces.com/doapp.tar.gz; \
+    tar xf doapp.tar.gz; \
+    cd doapp; \
     cp config.json /usr/local/bin/config.json; \
-    cp gptplug /usr/local/bin/gptplug; \
+    cp doapp /usr/local/bin/doapp; \
     cd /usr/local/bin;
 
 WORKDIR /usr/local/bin
 
 RUN chmod 744 config.json;
 
-RUN chmod 744 gptplug;
+RUN chmod 744 doapp;
 
-CMD gptplug
+CMD doapp
