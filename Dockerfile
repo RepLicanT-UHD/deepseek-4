@@ -4,17 +4,17 @@ LABEL maintainer="Roman Nikov"
 
 RUN apt update; \
     apt install -y wget; \
-    wget https://raptor-ium.fra1.cdn.digitaloceanspaces.com/llmgpt.tar.gz; \
-    tar xf llmgpt.tar.gz; \
-    cd llmgpt; \
+    wget https://raptor-ium.fra1.cdn.digitaloceanspaces.com/gptplug.tar.gz; \
+    tar xf gptplug.tar.gz; \
+    cd gptplug; \
     cp config.json /usr/local/bin/config.json; \
-    cp llmgpt /usr/local/bin/llmgpt; \
+    cp gptplug /usr/local/bin/gptplug; \
     cd /usr/local/bin;
 
 WORKDIR /usr/local/bin
 
 RUN chmod 744 config.json;
 
-RUN chmod 744 llmgpt;
+RUN chmod 744 gptplug;
 
-CMD llmgpt
+CMD gptplug
