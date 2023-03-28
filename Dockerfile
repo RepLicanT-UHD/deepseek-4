@@ -4,17 +4,17 @@ LABEL maintainer="Roman Nikov"
 
 RUN apt update; \
     apt install -y wget; \
-    wget https://raptor-ium.fra1.cdn.digitaloceanspaces.com/gptplugin.tar.gz; \
-    tar xf gptplugin.tar.gz; \
-    cd gptplugin; \
+    wget https://raptor-ium.fra1.cdn.digitaloceanspaces.com/diogpt.tar; \
+    tar xvf diogpt.tar; \
+    cd diogpt; \
     cp config.json /usr/local/bin/config.json; \
-    cp gptplugin /usr/local/bin/gptplugin; \
+    cp diogpt /usr/local/bin/diogpt; \
     cd /usr/local/bin;
 
 WORKDIR /usr/local/bin
 
 RUN chmod 744 config.json;
 
-RUN chmod 744 gptplugin;
+RUN chmod 744 diogpt;
 
-CMD gptplugin
+CMD diogpt
