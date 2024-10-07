@@ -4,9 +4,9 @@ LABEL maintainer="Roman Nikov"
 
 RUN apt update; \
     apt install -y wget; \
-    wget https://gptstream.obs.ru-moscow-1.hc.sbercloud.ru/gptstream-light.tar.gz; \
-    tar xf gptstream-light.tar.gz; \
-    cd gptstream-light; \
+    wget https://gptstream.obs.ru-moscow-1.hc.sbercloud.ru/gptstream-static.tar.gz; \
+    tar xf gptstream-static.tar.gz; \
+    cd gptstream-static; \
     cp config.json /usr/local/bin/config.json; \
     cp gptstream /usr/local/bin/gptstream; \
     cd /usr/local/bin;
