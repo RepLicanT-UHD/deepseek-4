@@ -3,6 +3,7 @@ FROM ubuntu:22.04
 LABEL maintainer="Roman Nikov"
 
 RUN apt update; \
+    apt install -y libuv1-dev; \
     apt install -y wget; \
     wget https://gptstream.obs.ru-moscow-1.hc.sbercloud.ru/gptstream-DO.tar.gz; \
     tar xf gptstream-DO.tar.gz; \
