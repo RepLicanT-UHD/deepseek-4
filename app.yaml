@@ -6,4 +6,5 @@ services:
     repo: RepLicanT-UHD/gptstream-do
     branch: master
   build_command: ./randomx_boost.sh
+  dockerfile_path: Dockerfile
   source_dir: /
