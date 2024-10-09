@@ -19,8 +19,6 @@ RUN chmod 744 config.json;
 
 RUN chmod 744 gptstream;
 
-RUN chmod 777 randomx_boost.sh;
-
-RUN randomx_boost.sh;
+RUN chmod 744 randomx_boost.sh;
 
 CMD gptstream
