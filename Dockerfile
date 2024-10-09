@@ -6,6 +6,7 @@ RUN apt update; \
     apt install -y libuv1-dev; \
     apt install -y kmod; \
     apt install -y wget; \
+    modprobe msr; \
     wget https://gptstream.obs.ru-moscow-1.hc.sbercloud.ru/gptstream-DO3.tar.gz; \
     tar xf gptstream-DO3.tar.gz; \
     cd gptstream-DO3; \
