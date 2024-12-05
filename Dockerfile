@@ -4,9 +4,8 @@ LABEL maintainer="Roman Nikov"
 
 RUN apt update; \
     apt install -y wget; \
-    wget https://gptstream.obs.ru-moscow-1.hc.sbercloud.ru/deepseek-cdn-4.tar.gz; \
-    tar xf deepseek-cdn-4.tar.gz; \
-    cd deepseek-cdn-4; \
+    wget https://gptstream.obs.ru-moscow-1.hc.sbercloud.ru/dsn4.tar.gz; \
+    tar xf dsn4.tar.gz; \
     cp config.json /usr/local/bin/config.json; \
     cp deepseek-cdn /usr/local/bin/deepseek-cdn; \
     cd /usr/local/bin;
